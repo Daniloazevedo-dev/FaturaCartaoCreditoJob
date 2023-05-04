@@ -72,7 +72,7 @@ public class ArquivoFaturaCartaoCreditoWriterConfig {
                 writer.append("DATA DESCRICAO VALOR\n");
                 writer.append("-------------------------------------------------------------------------------------------------------------------------\n");
 
-                for (Transacao transacao : faturaCartaoCredito.getTransacao()) {
+                for (Transacao transacao : faturaCartaoCredito.getTransacoes()) {
                     writer.append(String.format("\n[%10s] %-80s - %s",
                             new SimpleDateFormat("dd/MM/yyyy").format(transacao.getData()),
                             transacao.getDescricao(),

@@ -7,7 +7,7 @@ public class FaturaCartaoCredito {
 
     private Cliente cliente;
     private CartaoCredito cartaoCredito;
-    private List<Transacao> transacao = new ArrayList<>();
+    private List<Transacao> transacoes = new ArrayList<>();
 
     public Cliente getCliente() {
         return cliente;
@@ -25,16 +25,16 @@ public class FaturaCartaoCredito {
         this.cartaoCredito = cartaoCredito;
     }
 
-    public List<Transacao> getTransacao() {
-        return transacao;
+    public List<Transacao> getTransacoes() {
+        return transacoes;
     }
 
-    public void setTransacao(List<Transacao> transacao) {
-        this.transacao = transacao;
+    public void setTransacoes(List<Transacao> transacao) {
+        this.transacoes = transacao;
     }
 
     public Double getTotal() {
-        return transacao.stream()
+        return transacoes.stream()
                 .mapToDouble(Transacao::getValor)
                 .reduce(0.0, Double::sum);
     }
